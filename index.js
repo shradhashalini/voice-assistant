@@ -15,21 +15,21 @@ restService.use(bodyParser.json());
 
 restService.post("/bathroom", function(req, res) {
   var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.bathroomResult
-      ? req.body.result.parameters.bathroomResult
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.bathroomResult
+      ? req.body.queryResult.parameters.bathroomResult
       : "Seems like some problem. Speak again.";
   return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
+    textToSpeech: speech,
+    displayText: speech
+
   });
 });
 
 restService.post("/audio", function(req, res) {
   var speech = "";
-  switch (req.body.result.parameters.AudioSample.toLowerCase()) {
+  switch (req.body.queryResult.parameters.AudioSample.toLowerCase()) {
     //Speech Synthesis Markup Language
     case "music one":
       speech =
@@ -186,9 +186,9 @@ restService.post("/slack-test", function(req, res) {
     ]
   };
   return res.json({
-    speech: "speech",
-    displayText: "speech",
-    source: "webhook-echo-sample",
+		textToSpeech: speech,
+    displayText: speech
+
     data: {
       slack: slack_message
     }
