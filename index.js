@@ -16,25 +16,8 @@ const {
 // Create an app instance
 const app = dialogflow();
 //const app = express().use(bodyParser.json());
-/*var con = mysql.createConnection({
-  host: "robby.cirl.missouri.edu",
-  user: "ss9cw",
-  password: "Kunugeli$123",
-  database: "adl_sandbox"
-  //port: "3306"
-});
 
-con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT hit_count FROM adl_sandbox.bathroom_visits where userid = '3004' and start_time = '2005-11-10 18:49:59'", function (err, result, fields) {
-    if (err) throw err;
-    //console.log(result[0].hit_count);
-    bathroom_visits = result[0].hit_count;
-    console.log("value=", bathroom_visits);
-    bathroom_visits_string = bathroom_visits.toString();
-    console.log(typeof bathroom_visits_string);
-  });
-});*/
+
 
 
 /*const app = dialogflow({
